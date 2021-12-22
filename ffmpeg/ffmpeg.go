@@ -42,7 +42,7 @@ func (t *Transcoder) Start(opts transcoder.Options) (<-chan transcoder.Progress,
 
 	var stderrIn io.ReadCloser
 
-	out := make(chan transcoder.Progress)
+	out := make(chan transcoder.Progress, 100)
 
 	defer t.closePipes()
 
